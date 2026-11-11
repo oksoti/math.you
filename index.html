@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matthew Zhang</title>
+  <meta name="description" content="Matthew Zhang — researching voice models at Interact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #171717;
+      --link: #3b82f6;
+      --link-hover: #1d4ed8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111111; --text: #ededed; --link: #60a5fa; --link-hover: #93c5fd; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "New York", "Source Serif 4", ui-serif, Georgia, serif;
+      font-size: 16px;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100dvh;
+      padding: 64px;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+    }
+    img {
+      width: 192px;
+      height: 192px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 30%;
+      flex-shrink: 0;
+    }
+    .text { display: flex; flex-direction: column; gap: 16px; }
+    h1 { font-size: 32px; font-style: italic; font-weight: 400; line-height: 1.2; }
+    p { max-width: 33rem; }
+    a {
+      color: var(--link);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+      transition: color 250ms, text-decoration-color 250ms;
+    }
+    a:hover { color: var(--link-hover); text-decoration-color: var(--link-hover); }
+
+    /* Staggered fade-in, like the original */
+    .fade { opacity: 0; animation: fadeUp 800ms ease-out forwards; }
+    img.fade { animation-name: fadeIn; animation-delay: 100ms; }
+    h1.fade { animation-delay: 200ms; }
+    .p1.fade { animation-delay: 500ms; }
+    .p2.fade { animation-delay: 800ms; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .fade { animation: none; opacity: 1; } }
+
+    @media (max-width: 640px) {
+      body { padding: 24px 16px; }
+      main { flex-direction: column; gap: 16px; }
+      h1 { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="fade" src="assets/profile.jpg" alt="Photo of Matthew">
+    <div class="text">
+      <h1 class="fade">Hi, I'm Matthew!</h1>
+      <p class="fade p1">
+        I'm currently researching voice models at <a href="https://interact.inc" target="_blank" rel="noopener">Interact</a>.
+        In the past I've studied engineering at Cambridge and worked on physics/robotics research.
+        I also play hockey and lacrosse.
+      </p>
+      <p class="fade p2">
+        Feel free to reach out at matthew [at] extrian [dot] com!
+      </p>
+    </div>
+  </main>
+</body>
+</html>
